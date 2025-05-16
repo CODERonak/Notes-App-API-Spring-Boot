@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.code.NotesAppAPI.model.UserEntity;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Integer>{
-
+public interface UserRepository extends JpaRepository<UserEntity, Integer> {
+    UserEntity findByUsername(String username);
 }
