@@ -7,5 +7,5 @@ import com.code.NotesAppAPI.model.NoteEntity;
 
 @Repository
 public interface NoteRepository extends JpaRepository<NoteEntity, Integer> {
-
+    
 }
