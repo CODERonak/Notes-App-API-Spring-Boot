@@ -25,11 +25,13 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/api/auth/register", "/h2-console/**").permitAll()
-                        .requestMatchers("/api/notes/create", "/api/notes/edit/{id}", "/api/notes/delete/{id}", "/api/notes/{id}").hasAuthority("USER")
+                        .requestMatchers("/api/notes/create", "/api/notes/edit/{id}", "/api/notes/delete/{id}",
+                                "/api/notes/{id}")
+                        .hasAuthority("USER")
                         .anyRequest().authenticated())
 
                 .httpBasic(Customizer.withDefaults());
-                // .formLogin(Customizer.withDefaults());
+        // .formLogin(Customizer.withDefaults());
         return http.build();
     }
 
